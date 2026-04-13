@@ -1,9 +1,9 @@
 'use client'
-import { FriendContext } from '@/context/FriendContext';
+import { FriendContext, FriendContextType } from '@/context/FriendContext';
 import React, { useContext } from 'react';
 
 const Header = () => {
-    const {  faridName, names} = useContext(FriendContext);
+    const {  faridName, names} = useContext(FriendContext) as FriendContextType;
     return (
         <div>
             <h2>Header file! </h2>
