@@ -3,7 +3,7 @@ import { FriendContext } from '@/context/FriendContext';
 import React, { useContext } from 'react';
 
 const Header = () => {
-    const {faridName, names} = useContext(FriendContext);
+    const { faridName, names} = useContext(FriendContext);
     return (
         <div>
             <h2>Header file! </h2>
