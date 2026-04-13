@@ -34,9 +34,10 @@ const FriendProvider = ({children}) => {
     const [friends, setFriends] = useState([]);
     const faridName = "Farid Akanda";
     const friendDetailInfo = {
+        faridName,
         friends, 
         setFriends,
-        faridName,
+        
         names
     }
     return <FriendContext.Provider value={friendDetailInfo}>
