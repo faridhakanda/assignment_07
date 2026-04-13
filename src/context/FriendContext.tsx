@@ -1,8 +1,13 @@
 'use client'
 import { createContext, useState } from "react";
-
-export const FriendContext = createContext();
-
+interface FriendContextType  {
+        faridName: String;
+        names: {id: Number; name: String; age: Number}[];
+        // friends: String[];
+        // setFriends: 
+};
+//export const FriendContext = createContext();
+export const FriendContext = createContext<FriendContextType | undefined>(undefined); //</FriendContextType>
 const FriendProvider = ({children}) => {
     const names = [
         {
@@ -33,12 +38,14 @@ const FriendProvider = ({children}) => {
     ]
     const [friends, setFriends] = useState([]);
     const faridName = "Farid Akanda";
+
+    
     const friendDetailInfo = {
-        faridName,
-        friends, 
-        setFriends,
+        faridName, //: String,
+        //friends, 
+        //setFriends,
         
-        names
+        names, //: []
     }
     return <FriendContext.Provider value={friendDetailInfo}>
         {children}
