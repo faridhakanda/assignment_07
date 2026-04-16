@@ -2,7 +2,8 @@
 import { FriendContext, FriendContextType } from '@/context/FriendContext';
 import Image from 'next/image';
 import React, { useContext } from 'react';
-import Facebook from '../assets/facebook.png';
+// import Facebook from './facebook.png';
+// import Call from '../../public/call.png'
 
 const Header = () => {
     const {  faridName, names} = useContext(FriendContext) as FriendContextType;
@@ -27,7 +28,7 @@ const Header = () => {
             </div>
             <div>
                 <Image src="/call.png" alt="call" width="40" height="40"/>
-                <Image src={Facebook} alt="Facebook Icon" width="40" height="40"/>
+                <Image src="/facebook.png" alt="Facebook Icon" width="40" height="40"/>
             </div>
         </div>
     );
