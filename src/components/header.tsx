@@ -16,7 +16,7 @@ const Header = () => {
             </div>)}
             <div className='bg-lime-200  text-black p-2  m-1 w-96 rounded-md'>
                 <h2>Farid Akanda is a software engineer!</h2>
-                <p>I'm interested to work with cyber security and date science!</p>
+                <p>I am interested to work with cyber security and date science!</p>
                 <ul>
                     <li>C/C++</li>
                     <li>Javascript</li>
