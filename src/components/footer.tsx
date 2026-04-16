@@ -1,16 +1,13 @@
 import React from 'react';
-import KeenKeeper from '/logo-xl.png';
 import Image from 'next/image';
-// import Instragram from '/instagram.png';
-// import Facebook from '/facebook.png';
-// import X from '/twitter.png';
+
 const Footer = () => {
     return (
         <div className='bg-[#244D3F]'>
             <div className='w-280 mx-auto text-center'>
                 <div className='pt-20 '>
                     
-                    <Image className='flex mx-auto py-2' src="/logo-xl.png" alt="keenkeeper text logo"  width="300" height="100"/>
+                    <Image className='flex mx-auto py-2' src="/logo-xl.png" alt="keenkeeper text logo"  width={300} height={300}/>
                     
                     <p className='py-1 text-[#FFFFFF]'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                     <h2 className='font-medium text-[20px] py-2 text-[#FFFFFF]'>Social Links</h2>

@@ -2,8 +2,6 @@
 import { FriendContext, FriendContextType } from '@/context/FriendContext';
 import Image from 'next/image';
 import React, { useContext } from 'react';
-// import Facebook from './facebook.png';
-// import Call from '../../public/call.png'
 
 const Header = () => {
     const {  faridName, names} = useContext(FriendContext) as FriendContextType;
