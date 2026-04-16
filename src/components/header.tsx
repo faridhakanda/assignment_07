@@ -1,33 +1,59 @@
-'use client'
-import { FriendContext, FriendContextType } from '@/context/FriendContext';
+'use client';
+
 import Image from 'next/image';
-import React, { useContext } from 'react';
-
+import Link from 'next/link';
+// import { usePathname } from 'next/navigation';
+import React, { useContext, useState } from 'react';
+import { GoHome } from "react-icons/go";
+import { RiTimeLine } from "react-icons/ri";
+import { ImStatsDots } from "react-icons/im";
+// import { FriendContext, FriendContextType } from '@/context/FriendContext';
+//import { NavLink, useLocation } from 'react-router';
+//import { useLocation } from 'react-router';//useLocation
 const Header = () => {
-    const {  faridName, names} = useContext(FriendContext) as FriendContextType;
+    // const pathname = usePathname();
+    // const isActive = false;
+    // const {faridName} = useContext(FriendContext) as FriendContextType;
+    const [isActive, setIsActive] = useState(false);
     return (
-        <div>
-            <h2>Header file! </h2>
-            <h2>{faridName} is a software engineer!</h2>
-            {names.map((Name) => <div key={Name.id}>
-                <h2>{Name.id}.{Name.name} - {Name.age}</h2>
-
-            </div>)}
-            <div className='bg-lime-200  text-black p-2  m-1 w-96 rounded-md'>
-                <h2>Farid Akanda is a software engineer!</h2>
-                <p>I am interested to work with cyber security and date science!</p>
-                <ul>
-                    <li>C/C++</li>
-                    <li>Javascript</li>
-                    <li>Typescript</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                </ul>
+        
+        <div className='shadow-sm py-2'>
+            <div className='mx-20 justify-between flex items-center'>
+                <Image src="/logo.png" alt="Logo" width={150} height={150} />
+                <div className='flex space-x-4 '>
+                    
+                    
+                    <Link
+                        href="/"
+                        onClick={() => setIsActive(!isActive)}
+                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
+                    >
+                        <GoHome />
+                        Home
+                        
+                    </Link>
+                    <Link 
+                        href="/timeline"
+                        onClick={() => setIsActive(!isActive)}
+                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
+                        //className='flex items-center space-x-1 gap-1 font-normal text-sm'
+                    >
+                        <RiTimeLine />
+                        TimeLine
+                    </Link>
+                    <Link 
+                        href="/stats"
+                        onClick={() => setIsActive(!isActive)}
+                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
+                        //className='flex items-center space-x-1 gap-1 font-normal text-sm'
+                    >
+                    
+                        <ImStatsDots />
+                        Stats
+                    </Link>
+                </div>
             </div>
-            <div>
-                <Image src="/call.png" alt="call" width="40" height="40"/>
-                <Image src="/facebook.png" alt="Facebook Icon" width="40" height="40"/>
-            </div>
+            
         </div>
     );
 };
