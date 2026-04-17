@@ -11,7 +11,8 @@ const config: Config = {
             screens: {
                 'sm': {'min': '280px', 'max': '850px'},
                 'md': {'min': '851px', 'max': '1050px'},
-                'log': {'min': '1051px', 'max': '1200px'},
+                'log': {'min': '1051px', 'max': '2000px'},
+                
             },
         },
     },

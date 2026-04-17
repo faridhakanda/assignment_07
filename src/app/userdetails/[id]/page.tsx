@@ -19,16 +19,15 @@ interface User {
     //     next_due_date: string;
     // }
     id: number;
-        name: string;
-        picture: string;
-        email: string;
-        days_since_contact: number;
-        status: string;
-        tags: string[];
-        bio: string;
-        goal: number;
-        next_due_date: string;
-    
+    name: string;
+    picture: string;
+    email: string;
+    days_since_contact: number;
+    status: string;
+    tags: string[];
+    bio: string;
+    goal: number;
+    next_due_date: string; 
 }
 const UserDetailsCard = () => {
     const params = useParams();

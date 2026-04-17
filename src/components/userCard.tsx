@@ -19,29 +19,36 @@ interface UserDataType {
 }
 const UserCard = ({user}: UserDataType) => {
     return (
-        <Link 
-            href={`/userdetails/${user.id}`}
-            
-        >
-             
+        <div className='bg-blue-50 rounded-md shadow-sm text-center py-5'>
+            <Link 
+                href={`/userdetails/${user.id}`}
+                
+                
+            >
+                
+                                
+                
+                <Image 
+                    className='w-[100] h-[100] mx-auto rounded-full'
+                    src={user.picture}
+                    alt={user.name}
+                    width={0}
+                    height={0}
+                />
+                <h2 className='text-[16px] my-2'>{user.name}</h2>
+                <p className='text-[#647489] text-[14px]'>63d ago</p>    
+                <div className='flex'>
+                    {user.tags.map((tag, index) => 
+                        <li className='list-none text-[12px] mx-auto my-2 bg-green-300 px-2 py-1 rounded-full w-fit' key={index}>{tag.toUpperCase()}</li>
+                    )}
+                </div>      
+                <p className={`text-[12px] text-[#FFFFFF] px-2 py-1 w-fit my-3 mx-auto  rounded-full ${user.status === "Overdue" ? "bg-[#244D3F]" : "hidden"}`}>{user.status}</p>
+                <p className={`text-[12px] text-[#FFFFFF] px-2 py-1 w-fit my-3 mx-auto  rounded-full ${user.status === "Almost Due" ? "bg-yellow-400" : "hidden"}`}>{user.status}</p>
+                <p className={`text-[12px] text-[#FFFFFF] px-2 py-1 w-fit my-3 mx-auto  rounded-full ${user.status === "On-Track" ? "bg-red-500" : "hidden"}`}>{user.status}</p>
                             
-            <h2>{user.name}</h2>
-            <Image 
-                className='w-[200] h-[200] mx-auto'
-                src={user.picture}
-                alt={user.name}
-                width={0}
-                height={0}
-            />
-            <h2>{user.bio}</h2>    
-            <div>
-                {user.tags.map((tag, index) => 
-                    <li className='list-none' key={index}>{tag}</li>
-                )}
-            </div>      
+            </Link>
+        </div>
         
-                           
-        </Link>
     );
 };
 
