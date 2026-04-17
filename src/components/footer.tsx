@@ -18,7 +18,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <hr className='border-t-1 border-gray-600 w-[1120px] mx-auto my-4'></hr>
-                <div className='mx-auto flex  justify-between pb-3 text-[#64748B]'>
+                <div className='mx-auto  flex  justify-between pb-3 text-[#64748B]'>
                     <div>
                         <p className=''>&copy; 2026 KeenKeeper. All rights reserved.</p>
                     </div>
