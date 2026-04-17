@@ -36,20 +36,20 @@ export default function Home() {
         </div>
         
         <div className='w-8/9 md:w-8/9  lg:w-7/9  mx-auto'>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mx-auto md:mx-auto lg:mx-auto w-8/9 md:w-8/9  lg:w-7/9 py-3 gap-1'>
-                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 p-3 rounded-md'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mx-auto md:mx-auto lg:mx-auto w-8/9 md:w-8/9  lg:w-8/9 py-3 gap-1'>
+                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 md:w-60 lg:w-64 p-3 rounded-md'>
                     <h2>{users.length}</h2>
                     <p className='text-[#647389] text-[14px] font-medium'>Total Friends</p>
                 </div>
-                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 p-3 rounded-md'>
+                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 md:w-60 lg:w-64 p-3 rounded-md'>
                     <h2>3</h2>
                     <p className='text-[#647389] text-[14px] font-medium'>On Track</p>
                 </div>
-                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 p-3 rounded-md'>
+                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 md:w-60 lg:w-64 p-3 rounded-md'>
                     <h2>6</h2>
                     <p className='text-[#647389] text-[14px] font-medium'>Need Attentoin</p>
                 </div>
-                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 p-5 rounded-md'>
+                <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 md:w-60 lg:w-64 p-5 rounded-md'>
                     <h2 className='text-[18px]'>12</h2>
                     <p className='text-[#647389] text-[14px] font-medium'>Interactions This Month</p>
                 </div>
@@ -57,12 +57,12 @@ export default function Home() {
             <div className='text-center text-[24px] font-semibold my-2'>
                 <h2>Your Friends</h2>
             </div>
-            <div className='grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 mx-auto md:mx-auto lg:mx-auto w-8/9 md:w-8/9  lg:w-7/9'>
+            <div className='grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 mx-auto md:mx-auto lg:mx-auto w-8/9 md:w-8/9  lg:w-8/9'>
                 
                 {users.map((user: UserDataType) => 
                     <div 
                         key={user.id}
-                        className='w-52 h-84 m-2 mx-auto'
+                        className='w-52 md:w-60 lg:w-64 h-84 m-2 mx-auto'
                     >
                         <UserCard user={user} />
                     </div>

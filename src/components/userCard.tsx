@@ -19,15 +19,12 @@ interface UserDataType {
 }
 const UserCard = ({user}: UserDataType) => {
     return (
-        <div className='bg-blue-50 rounded-md shadow-sm text-center py-5'>
+        <div className='bg-[#FFFFFF] rounded-md shadow-sm text-center py-5'>
             <Link 
                 href={`/userdetails/${user.id}`}
                 
                 
             >
-                
-                                
-                
                 <Image 
                     className='w-[100] h-[100] mx-auto rounded-full'
                     src={user.picture}

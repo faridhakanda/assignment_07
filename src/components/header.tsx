@@ -14,7 +14,25 @@ const Header = () => {
     // const pathname = usePathname();
     // const isActive = false;
     // const {faridName} = useContext(FriendContext) as FriendContextType;
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(true);
+    const [isTimeLine, setIsTimeLine] = useState(false);
+    const [isStats, setIsStats] = useState(false);
+    const handleHome = () => {
+        setIsActive(true);
+        setIsTimeLine(false);
+        setIsStats(false);
+    }
+    const handleTimeLine = () => {
+        setIsActive(false);
+        setIsTimeLine(true);
+        setIsStats(false);
+    }
+    const handleStats = () => {
+        setIsActive(false);
+        setIsTimeLine(false);
+        setIsStats(true);
+    }
+
     return (
         
         <div className='shadow-sm py-2'>
@@ -25,7 +43,7 @@ const Header = () => {
                     
                     <Link
                         href="/"
-                        onClick={() => setIsActive(!isActive)}
+                        onClick={() => handleHome()}
                         className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
                     >
                         <GoHome />
@@ -34,7 +52,7 @@ const Header = () => {
                     </Link>
                     <Link 
                         href="/timeline"
-                        onClick={() => setIsActive(!isActive)}
+                        onClick={() => handleTimeLine()}
                         className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
                         //className='flex items-center space-x-1 gap-1 font-normal text-sm'
                     >
@@ -43,7 +61,7 @@ const Header = () => {
                     </Link>
                     <Link 
                         href="/stats"
-                        onClick={() => setIsActive(!isActive)}
+                        onClick={() => handleStats()}
                         className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
                         //className='flex items-center space-x-1 gap-1 font-normal text-sm'
                     >
