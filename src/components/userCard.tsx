@@ -1,19 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-
-// interface UserData {
-//     id: number;
-//     name: string;
-//     picture: string;
-//     email: string;
-//     days_since_contact: number;
-//     status: string;
-//     tags: string;
-//     bio: string;
-//     goal: number;
-//     next_due_date: string;
-// }
 interface UserDataType {
     user: {
         id: number;
@@ -31,12 +19,15 @@ interface UserDataType {
 }
 const UserCard = ({user}: UserDataType) => {
     return (
-        <div>
+        <Link 
+            href={`/userdetails/${user.id}`}
+            
+        >
              
-                                
+                            
             <h2>{user.name}</h2>
             <Image 
-                className='w-[200] h-[200]'
+                className='w-[200] h-[200] mx-auto'
                 src={user.picture}
                 alt={user.name}
                 width={0}
@@ -48,9 +39,9 @@ const UserCard = ({user}: UserDataType) => {
                     <li className='list-none' key={index}>{tag}</li>
                 )}
             </div>      
-                            
+        
                            
-        </div>
+        </Link>
     );
 };
 
