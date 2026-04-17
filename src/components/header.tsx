@@ -3,17 +3,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 // import { usePathname } from 'next/navigation';
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 import { GoHome } from "react-icons/go";
 import { RiTimeLine } from "react-icons/ri";
 import { ImStatsDots } from "react-icons/im";
-// import { FriendContext, FriendContextType } from '@/context/FriendContext';
+//import { FriendContext, FriendContextType } from '@/context/FriendContext';
 //import { NavLink, useLocation } from 'react-router';
 //import { useLocation } from 'react-router';//useLocation
 const Header = () => {
     // const pathname = usePathname();
     // const isActive = false;
-    // const {faridName} = useContext(FriendContext) as FriendContextType;
+    //const {isActive, isStats, isTimeLine, handleHome, handleTimeLine, handleStats } = useContext(FriendContext) as FriendContextType;
     const [isActive, setIsActive] = useState(true);
     const [isTimeLine, setIsTimeLine] = useState(false);
     const [isStats, setIsStats] = useState(false);
@@ -32,7 +32,7 @@ const Header = () => {
         setIsTimeLine(false);
         setIsStats(true);
     }
-
+    
     return (
         
         <div className='shadow-sm py-2'>
@@ -53,7 +53,7 @@ const Header = () => {
                     <Link 
                         href="/timeline"
                         onClick={() => handleTimeLine()}
-                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
+                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isTimeLine ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
                         //className='flex items-center space-x-1 gap-1 font-normal text-sm'
                     >
                         <RiTimeLine />
@@ -62,7 +62,7 @@ const Header = () => {
                     <Link 
                         href="/stats"
                         onClick={() => handleStats()}
-                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isActive ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
+                        className={`p-1 flex items-center space-x-1 gap-1 font-normal text-sm ${isStats ? 'bg-[#244D3F] rounded-md text-white' : ''}`}
                         //className='flex items-center space-x-1 gap-1 font-normal text-sm'
                     >
                     

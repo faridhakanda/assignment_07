@@ -39,12 +39,42 @@ const FriendProvider = ({children} : {children: ReactNode}) => {
     //const [friends, setFriends] = useState([]);
     const faridName = "Farid Akanda";
 
+    // const myFunc = () => {
+    //     return "Hello, world!";
+    // }
+    // const [isActive, setIsActive] = useState(true);
+    //     const [isTimeLine, setIsTimeLine] = useState(false);
+    //     const [isStats, setIsStats] = useState(false);
+    //     const handleHome = () => {
+    //         setIsActive(true);
+    //         setIsTimeLine(false);
+    //         setIsStats(false);
+    //     }
+    //     const handleTimeLine = () => {
+    //         setIsActive(false);
+    //         setIsTimeLine(true);
+    //         setIsStats(false);
+    //     }
+    //     const handleStats = () => {
+    //         setIsActive(false);
+    //         setIsTimeLine(false);
+    //         setIsStats(true);
+    //     }
     
+
+
+
     const friendDetailInfo = {
         faridName, //: String,
         //friends, 
         //setFriends,
-        
+        // myFunc,
+        // isActive,
+        // isTimeLine,
+        // isStats,
+        // handleHome,
+        // handleTimeLine,
+        // handleStats,
         names, //: []
     }
     return <FriendContext.Provider value={friendDetailInfo}>

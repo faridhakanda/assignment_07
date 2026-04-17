@@ -26,6 +26,8 @@ interface UserDataType {
 export default function Home() {
     const users: UserDataType[] = UserDataFetch;
     //const { faridName, names } = useContext(FriendContext) as FriendContextType;
+    //const { myFunc } = useContext(FriendContext) as FriendContextType;
+    //const aaa = myFunc();
   return (
     <div className="bg-[#F9F8F6] text-black p-2 text-2xl font-bold">
         
