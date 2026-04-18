@@ -16,7 +16,7 @@ import { SiGooglemeet } from "react-icons/si";
 import { FiPhoneCall } from "react-icons/fi";
 import { PiCurrencyNgnThin } from 'react-icons/pi';
 import { IconType } from 'react-icons';
-import { ReactNode } from 'react';
+//import { ReactNode } from 'react';
 // import Call1 from '/call.png';
 // import Text from '/text.png';
 // import Video from '/video.png';
@@ -25,7 +25,7 @@ import { ReactNode } from 'react';
 interface FeatureType {
     FeatureText: string;
     FeatureTitle: string;
-    FeatureIcon: ReactNode; //IconType; //ComponentType<SVGProps<SVGSVGElement>>;
+    FeatureIcon: IconType; //ComponentType<SVGProps<SVGSVGElement>>;
     DateText: string;
 }
 const FeatureCart = ({ FeatureTitle, FeatureText, FeatureIcon, DateText}: FeatureType) => {
