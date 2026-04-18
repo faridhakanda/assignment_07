@@ -1,20 +1,26 @@
 import React from 'react';
-
-const FeatureCart = ({ featureTitle, featureText, featureIcon, dateText}) => {
+import { IconType } from 'react-icons';
+interface FeatureType {
+    FeatureText: string;
+    FeatureTitle: string;
+    FeatureIcon: IconType; //ComponentType<SVGProps<SVGSVGElement>>;
+    DateText: string;
+}
+const FeatureCart = ({ FeatureTitle, FeatureText, FeatureIcon: FeatureIcon, DateText}: FeatureType) => {
     return (
         <div>
             <div className='w-full h-fit mx-auto my-1 sm:my-0  text-center'>
                 <div className='flex justify-between px-4 py-2 items-center'>
                     <div className='flex items-center space-x-2 text-start'>
-                        < featureIcon/>
+                        < FeatureIcon/>
                         <div>
-                            <h2>{featureTitle}</h2>
-                            <p className='text-[#647489] text-[14px]'>{featureText}</p>
+                            <h2>{FeatureTitle}</h2>
+                            <p className='text-[#647489] text-[14px]'>{FeatureText}</p>
                         </div>
                         
                     </div>
                     <div>
-                        <p className='text-[#647489] text-[16px]'>{dateText}</p>
+                        <p className='text-[#647489] text-[16px]'>{DateText}</p>
                     </div>
                 </div>
             </div>
