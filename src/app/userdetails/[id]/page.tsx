@@ -15,7 +15,7 @@ import { IoVideocamOutline } from "react-icons/io5";
 import { SiGooglemeet } from "react-icons/si";
 import { FiPhoneCall } from "react-icons/fi";
 import { PiCurrencyNgnThin } from 'react-icons/pi';
-import { IconType } from 'react-icons';
+//import { IconType } from 'react-icons';
 //import { ReactNode } from 'react';
 // import Call1 from '/call.png';
 // import Text from '/text.png';
@@ -88,8 +88,8 @@ const UserDetailsCard = () => {
     return (
         <div className='bg-[#F9F8F6]'>
             <div className='py-12 md:flex mx-auto justify-center lg:w-6/9'>
-                <div className='bg-green-300 mx-auto w-5/6 md:w-4/12'>
-                    <div className='md:w-4/5 bg-gray-50 text-center py-6 rounded-md'>
+                <div className=' mx-auto w-5/6 md:w-4/12'>
+                    <div className='md:w-4/5 bg-gray-50 shadow-sm text-center py-6 rounded-md'>
                         <Image 
                             className='w-[100] h-[100] mx-auto  rounded-full'
                             src={currentUser.picture}
@@ -113,16 +113,16 @@ const UserDetailsCard = () => {
                         
                     </div>
                     <div className='md:w-4/5 text-center'>
-                        <h2 className='bg-gray-50 my-1 rounded-md py-2 items-center justify-center text-center flex gap-2'><TbBellRinging />Snooze 2 Weeks</h2>
-                        <h2 className='bg-gray-50 my-1 rounded-md py-2 items-center justify-center text-center flex gap-2'> <FaBoxArchive/>Archive</h2>
-                        <h2 className='bg-gray-50 my-1 rounded-md py-2 items-center justify-center text-center flex gap-2 text-red-600'><AiOutlineDelete/>Delete</h2>
+                        <h2 className='bg-gray-50 shadow-sm my-1 rounded-md py-2 items-center justify-center text-center flex gap-2'><TbBellRinging />Snooze 2 Weeks</h2>
+                        <h2 className='bg-gray-50 shadow-sm my-1 rounded-md py-2 items-center justify-center text-center flex gap-2'> <FaBoxArchive/>Archive</h2>
+                        <h2 className='bg-gray-50 shadow-sm my-1 rounded-md py-2 items-center justify-center text-center flex gap-2 text-red-600'><AiOutlineDelete/>Delete</h2>
                     </div>
                     
                     
                     
                 </div>
-                <div className='bg-pink-300 w-5/6 md:grid grid-cols-1  mx-auto md:my-0'>
-                    <div className='justify-between  bg-lime-200 grid grid-cols-1 md:grid-cols-3 text-center w-full h-fit '>
+                <div className=' w-5/6 md:grid grid-cols-1  mx-auto md:my-0'>
+                    <div className='justify-between   grid grid-cols-1 md:grid-cols-3 text-center w-full h-fit '>
                         <div className='w-full h-fit py-3 mx-auto my-1 sm:my-0 md:w-[230px] text-center  bg-gray-50 rounded-md shadow-sm'>
                             <h2>{currentUser.days_since_contact}</h2>
                             <p className='text-[12px]'>Days Since Contact</p>
@@ -139,7 +139,7 @@ const UserDetailsCard = () => {
 
                     
 
-                    <div className='grid grid-cols-1 text-center md:grid-cols-2 justify-between bg-gray-50 rounded-md mx-3 my-1 py-3 h-fit  sm:px-0'>
+                    <div className='grid grid-cols-1 shadow-sm text-center md:grid-cols-2 justify-between bg-gray-50 rounded-md mx-3 my-1 py-3 h-fit  sm:px-0'>
                         <div className='font-medium my-4 px-2'>
                                 <h2>Relationship Goal</h2>
                                 <p className='text-[#647489] text-[14px]'>Connect every<span className='text-[#000000]'> 30 days</span></p>
@@ -152,7 +152,7 @@ const UserDetailsCard = () => {
                     
 
 
-                    <div className='bg-gray-50 rounded-md mx-3 h-fit py-4 px-4 sm:px-0'>
+                    <div className='bg-gray-50 shadow-sm my-2 rounded-md mx-3 h-fit py-4 px-4 sm:px-0'>
                         <h2 className='font-medium my-4 px-2'>Quick Check-In</h2>
                         
                         
@@ -197,7 +197,7 @@ const UserDetailsCard = () => {
                     
                     {/* feature part */}
 
-                    <div className='bg-gray-50 rounded-md mx-3 my-2 h-fit py-4 px-4 sm:px-0'>
+                    <div className='bg-gray-50 shadow-md rounded-md mx-3 my-2 h-fit py-4 px-4 sm:px-0'>
                         <div className='font-medium justify-between flex my-4 px-4'>
                             <h2>Recent Interactions</h2>
                             <div className='border-1 border-gray-200 rounded-md w-fit px-2 py-1 text-[16px] text-[#647489]'>Full History</div>
