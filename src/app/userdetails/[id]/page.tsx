@@ -10,20 +10,50 @@ import React from 'react';
 import { TbBellRinging } from "react-icons/tb";
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaBoxArchive } from "react-icons/fa6";
+//import { MdOutlineTextsms } from "react-icons/md";
+import { IoVideocamOutline } from "react-icons/io5";
+import { SiGooglemeet } from "react-icons/si";
+import { FiPhoneCall } from "react-icons/fi";
+import { PiCurrencyNgnThin } from 'react-icons/pi';
+import { IconType } from 'react-icons';
+import { ReactNode } from 'react';
+// import Call1 from '/call.png';
+// import Text from '/text.png';
+// import Video from '/video.png';
+//import FeatureCart from '@/components/featureCart';
+
+interface FeatureType {
+    FeatureText: string;
+    FeatureTitle: string;
+    FeatureIcon: ReactNode; //IconType; //ComponentType<SVGProps<SVGSVGElement>>;
+    DateText: string;
+}
+const FeatureCart = ({ FeatureTitle, FeatureText, FeatureIcon, DateText}: FeatureType) => {
+    return (
+        <div>
+            <div className='w-full h-fit mx-auto my-1 sm:my-0  text-center'>
+                <div className='flex justify-between px-4 py-2 items-center'>
+                    <div className='flex items-center space-x-2 text-start'>
+                        <FeatureIcon/>
+                        {/* <Image className='w-fit h-fit' src={FeatureIcon} alt={FeatureTitle} width={32} height={32} /> */}
+                        <div>
+                            <h2>{FeatureTitle}</h2>
+                            <p className='text-[#647489] text-[14px]'>{FeatureText}</p>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <p className='text-[#647489] text-[16px]'>{DateText}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 
 interface User {
-    // user: {
-    //     id: number;
-    //     name: string;
-    //     picture: string;
-    //     email: string;
-    //     days_since_contact: number;
-    //     status: string;
-    //     tags: string[];
-    //     bio: string;
-    //     goal: number;
-    //     next_due_date: string;
-    // }
+    
     id: number;
     name: string;
     picture: string;
@@ -38,9 +68,7 @@ interface User {
 const UserDetailsCard = () => {
     const params = useParams();
     const id = params.id;
-    // const users: UserDataType[] = UserDataFetch;
-    // console.log(users, "users");
-    // console.log(id, "user details")
+    
     const users: User[] = UserDataFetch;
     const currentUser = users.find((user) => user.id === Number(id));
     // = (UserDataFetch as User[]).find((u) => u.id === Number(id));
@@ -108,166 +136,89 @@ const UserDetailsCard = () => {
                             <p className='text-[12px]'>Next Due</p>
                         </div>
                     </div>
-                    <div className='md:flex justify-between text-center md:text-around  items-center  rounded-md md:w-5/6 mx-auto  h-fit bg-lime-300'>
-                        <div>
-                            <h2>Relationship Goal</h2>
-                            <p>Connect every <span>30 days</span></p>
-                        </div>
-                        <button>Edit</button>
+
+                    
+
+                    <div className='grid grid-cols-1 text-center md:grid-cols-2 justify-between bg-gray-50 rounded-md mx-3 my-1 py-3 h-fit  sm:px-0'>
+                        <div className='font-medium my-4 px-2'>
+                                <h2>Relationship Goal</h2>
+                                <p className='text-[#647489] text-[14px]'>Connect every<span className='text-[#000000]'> 30 days</span></p>
+                            </div>
+                            <div className="w-fit mx-auto my-auto h-fit px-4 py-1 border-1 border-gray-300 shadow-sm  rounded-md ">
+                                Edit
+                            </div>
                     </div>
-                    <div>
-                        <h2>Quick Check-In</h2>
-                        <div className='flex space-x-2 text-center items-center mx-auto'>
-                            <div>
-                                <Image src="/call.png" alt="call icon" width={32} height={32} />
-                                <button
-                                    onClick={handleToCall}
-                                    className='cursor-pointer'
-                                >
-                                    Call
-                                </button>
+                    
+                    
+
+
+                    <div className='bg-gray-50 rounded-md mx-3 h-fit py-4 px-4 sm:px-0'>
+                        <h2 className='font-medium my-4 px-2'>Quick Check-In</h2>
+                        
+                        
+                        {/* call, text and video section */}
+                        <div className='justify-between grid grid-cols-1 md:grid-cols-3 text-center w-full h-fit '>
+                            <div className='w-full h-fit py-3 mx-auto my-1 sm:my-0 md:w-[230px] text-center  bg-gray-100 rounded-md shadow-sm'>
+                                <div>
+                                    <Image className='mx-auto my-1' src="/call.png" alt="call icon" width={32} height={32} />
+                                    <button
+                                        onClick={handleToCall}
+                                        className='cursor-pointer my-1'
+                                    >
+                                        Call
+                                    </button>
+                                </div>
                             </div>
-                            <div>
-                                <Image src="/text.png" alt="call icon" width={32} height={32} />
-                                <button
-                                    onClick={handleToText}
-                                    className='cursor-pointer'
-                                >
-                                    Text
-                                </button>
+                            <div className='w-full h-fit py-3 mx-auto my-1 sm:my-0 md:w-[230px] bg-gray-100 shadow-sm text-center rounded-md'>
+                                <div>
+                                    <Image className='mx-auto my-1' src="/text.png" alt="call icon" width={32} height={32} />
+                                    <button
+                                        onClick={handleToText}
+                                        className='cursor-pointer my-1'
+                                    >
+                                        Text
+                                    </button>
+                                </div>
                             </div>
-                            <div>
-                                <Image src="/video.png" alt="call icon" width={32} height={32} />
-                                <button
-                                    onClick={handleToVideo}
-                                    className='cursor-pointer'
-                                >
-                                    Video
-                                </button>
+                            <div className='w-full h-fit py-3 mx-auto my-1 sm:my-0 md:w-[230px] bg-gray-100 shadow-sm text-center rounded-md'>
+                                <div >
+                                    <Image className='mx-auto my-1' src="/video.png" alt="call icon" width={32} height={32} />
+                                    <button
+                                        onClick={handleToVideo}
+                                        className='cursor-pointer my-1'
+                                    >
+                                        Video
+                                    </button>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+
+                    
+                    {/* feature part */}
+
+                    <div className='bg-gray-50 rounded-md mx-3 my-2 h-fit py-4 px-4 sm:px-0'>
+                        <div className='font-medium justify-between flex my-4 px-4'>
+                            <h2>Recent Interactions</h2>
+                            <div className='border-1 border-gray-200 rounded-md w-fit px-2 py-1 text-[16px] text-[#647489]'>Full History</div>
+                        </div>
+                        
+                        
+                        {/* call, text and video section */}
+                        <div className='justify-between grid grid-cols-1 px-4 text-center w-full h-fit '>
+                            <FeatureCart FeatureIcon={FiPhoneCall} FeatureText={`${currentUser.name} is call.`} FeatureTitle={"Call"} DateText={"Jun 22, 2025"} />
+                            <hr className='border-t-1 border-gray-200 my-1'></hr>
+                            <FeatureCart FeatureIcon={SiGooglemeet} FeatureText={`${currentUser.name} is meet.`} FeatureTitle={"Meetup"} DateText={"Jun 22, 2025"} />
+                            <hr className='border-t-1 border-gray-200 my-1'></hr>
+                            <FeatureCart FeatureIcon={IoVideocamOutline} FeatureText={`${currentUser.name} is video.`} FeatureTitle={"Video"} DateText={"Feb 12, 2026"} />
+                            <hr className='border-t-1 border-gray-200 my-1'></hr>
+                            <FeatureCart FeatureIcon={PiCurrencyNgnThin} FeatureText={`${currentUser.name} is meet.`} FeatureTitle={"Meetup"} DateText={"Jan 22, 2025"} />
                         </div>
                     </div>
                 </div>
 
             </div>
-            {/* <div className='mx-auto grid grid-cols-1 md:grid-cols-2 w-12/13 md:w-8/9 lg:w-6/9 bg-red-400'>
-                <div className='bg-lime-300 lg:w-3/5'>
-                    <div className='w-4/5 mx-auto'>
-                        <div className='w-full bg-gray-50'>
-                            <Image 
-                                className='w-[100] h-[100]  rounded-full'
-                                src={currentUser.picture}
-                                alt={currentUser.name}
-                                width={0}
-                                height={0}
-                            />
-                            <h2>{currentUser.name}</h2>
-                            <p>{currentUser.status}</p>
-                            <div>
-                                {currentUser.tags.map((tag, index) =>
-                                    <li key={index}>{tag.toUpperCase()}</li> 
-                                )}
-                            </div>
-                            <p>{currentUser.bio}</p>
-                        </div>
-                    
-                        <h2>Snooze 2 Weeks</h2>
-                        <h2>Archive</h2>
-                        <h2>Delete</h2>
-                    </div>
-                </div>
-                <div className='flex'>
-                    <div className='bg-blue-300 w-3/4'>
-                        <h2>First</h2>
-                    </div>
-                    <div className='bg-orange-300'>
-                        <h2>Right Part</h2>
-                    </div>
-                    <div className='bg-lime-300'>
-                        <h2>Last Part</h2>
-                    </div>
-                </div>
-            </div>
-            <div className='bg-blue-200 mx-auto py-12 grid grid-cols-1 md:grid-cols-2 lg:w-6/9'>
-                <div className='w-4/5 mx-auto'>
-                    <div className='w-4/5 bg-gray-50'>
-                        <Image 
-                            className='w-[100] h-[100]  rounded-full'
-                            src={currentUser.picture}
-                            alt={currentUser.name}
-                            width={0}
-                            height={0}
-                        />
-                        <h2>{currentUser.name}</h2>
-                        <p>{currentUser.status}</p>
-                        <div>
-                            {currentUser.tags.map((tag, index) =>
-                                <li key={index}>{tag.toUpperCase()}</li> 
-                            )}
-                        </div>
-                        <p>{currentUser.bio}</p>
-                    </div>
-                    
-                    <h2>Snooze 2 Weeks</h2>
-                    <h2>Archive</h2>
-                    <h2>Delete</h2>
-                </div>
-                <div className='bg-lime-300 w-6/5 mx-auto'>
-                    <div className='flex text-center w-4/5 space-x-2'>
-                        <div>
-                            <h2>{currentUser.days_since_contact}</h2>
-                            <p className='text-[12px]'>Days Since Contact</p>
-                        </div>
-                        <div>
-                            <h2>{currentUser.goal}</h2>
-                            <p className='text-[12px]'>Goal(Days)</p>
-                        </div>
-                        <div>
-                            <h2>{currentUser.next_due_date}</h2>
-                            <p className='text-[12px]'>Next Due</p>
-                        </div>
-                    </div>
-                    <div className='flex bg-yellow-200 justify-between mx-4 '>
-                        <div>
-                            <h2>Relationship Goal</h2>
-                            <p>Connect every <span>30 days</span></p>
-                        </div>
-                        <button>Edit</button>
-                    </div>
-                    <div>
-                        <h2>Quick Check-In</h2>
-                        <div className='flex space-x-2 text-center items-center mx-auto'>
-                            <div>
-                                <Image src="/call.png" alt="call icon" width={32} height={32} />
-                                <button
-                                    onClick={handleToCall}
-                                    className='cursor-pointer'
-                                >
-                                    Call
-                                </button>
-                            </div>
-                            <div>
-                                <Image src="/text.png" alt="call icon" width={32} height={32} />
-                                <button
-                                    onClick={handleToText}
-                                    className='cursor-pointer'
-                                >
-                                    Text
-                                </button>
-                            </div>
-                            <div>
-                                <Image src="/video.png" alt="call icon" width={32} height={32} />
-                                <button
-                                    onClick={handleToVideo}
-                                    className='cursor-pointer'
-                                >
-                                    Video
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+            
         </div>
     );
 };
