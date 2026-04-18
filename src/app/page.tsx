@@ -25,6 +25,14 @@ interface UserDataType {
 }
 export default function Home() {
     const users: UserDataType[] = UserDataFetch;
+    let total = 0;
+    users.map((user) => {
+            if(user.status === 'On-Track') {
+                total++;
+            }
+        }
+    )
+    //const totalOnTrack = onTrackCounter();
     //const { faridName, names } = useContext(FriendContext) as FriendContextType;
     //const { myFunc } = useContext(FriendContext) as FriendContextType;
     //const aaa = myFunc();
@@ -44,7 +52,7 @@ export default function Home() {
                     <p className='text-[#647389] text-[14px] font-medium'>Total Friends</p>
                 </div>
                 <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 md:w-52 lg:w-64 p-3 rounded-md'>
-                    <h2>3</h2>
+                    <h2>{total}</h2>
                     <p className='text-[#647389] text-[14px] font-medium'>On Track</p>
                 </div>
                 <div className='bg-[#FFFFFF] mx-auto shadow-sm text-center w-52 md:w-52 lg:w-64 p-3 rounded-md'>
