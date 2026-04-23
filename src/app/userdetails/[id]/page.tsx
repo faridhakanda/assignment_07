@@ -103,7 +103,7 @@ const UserDetailsCard = () => {
         // console.log(isUser, "isUser data");
         toast.success(`${currentUser.name} is added to video!`);
     }
-    console.log(isUser, "All details!");
+    //console.log(isUser, "All details!");
     return (
         <div className='bg-[#F9F8F6]'>
             
