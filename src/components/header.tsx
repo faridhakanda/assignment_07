@@ -3,10 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 // import { usePathname } from 'next/navigation';
-import React, {  useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { GoHome } from "react-icons/go";
 import { RiTimeLine } from "react-icons/ri";
 import { ImStatsDots } from "react-icons/im";
+import { FriendContext, FriendContextType } from '@/context/FriendContext';
 //import { FriendContext, FriendContextType } from '@/context/FriendContext';
 //import { NavLink, useLocation } from 'react-router';
 //import { useLocation } from 'react-router';//useLocation
@@ -14,6 +15,7 @@ const Header = () => {
     // const pathname = usePathname();
     // const isActive = false;
     //const {isActive, isStats, isTimeLine, handleHome, handleTimeLine, handleStats } = useContext(FriendContext) as FriendContextType;
+    const {isStata, setIsStata} = useContext(FriendContext) as FriendContextType;
     const [isActive, setIsActive] = useState(true);
     const [isTimeLine, setIsTimeLine] = useState(false);
     const [isStats, setIsStats] = useState(false);
@@ -68,6 +70,7 @@ const Header = () => {
                     >
                     
                         <ImStatsDots />
+                        <span>{isStata.length}</span>
                         Stats
                     </Link>
                 </div>

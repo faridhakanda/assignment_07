@@ -5,7 +5,7 @@ import UserDataFetch from '../../users.json'
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import { TbBellRinging } from "react-icons/tb";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -21,6 +21,7 @@ import { PiCurrencyNgnThin } from 'react-icons/pi';
 // import Text from '/text.png';
 // import Video from '/video.png';
 import FeatureCart from '@/components/featureCart';
+import { FriendContext, FriendContextType } from '@/context/FriendContext';
 
 // interface FeatureType {
 //     FeatureText: string;
@@ -65,9 +66,13 @@ interface User {
     goal: number;
     next_due_date: string; 
 }
+
 const UserDetailsCard = () => {
     const params = useParams();
     const id = params.id;
+
+    const [isUser, setIsUser] = useState([]);
+    const {isStata, setIsStata} = useContext(FriendContext) as FriendContextType;
     
     const users: User[] = UserDataFetch;
     const currentUser = users.find((user) => user.id === Number(id));
@@ -76,17 +81,65 @@ const UserDetailsCard = () => {
         return <div>Not user found!</div>
     }
 
+
+    const toDate = new Date();
+    const today = toDate.getDate();
+    const month = toDate.getMonth();
+    const presentYear = toDate.getFullYear();
+    const months = ["January", "Feb", "March", "April", "May", "June", "July", "August", "September", "Octorber", "November", "December"];
+    const currentDate = months[month]+" "+today+", "+presentYear;
+    //console.log("Today is: ", months[month-1]+" "+today+", "+presentYear);
+    //console.log("Today: ", currentDate);
     const handleToCall = () => {
+        //const userCall = {'call': 1};
+        //const newUser = [...isUser, userCall];
+        //const toDate: Date = new Date();
+        const newUser = {
+            name: currentUser.name,
+            title: 'Call',
+            dayTime: currentDate
+        }
+        setIsStata([...isStata, newUser]);
+        //setIsUser([...isUser,userCall]);
+        //console.log(isUser, "isUser data");
         toast.success(`${currentUser.name} is added to call!`);
     }
     const handleToText = () => {
+        // const userCall = {
+        //     "text": 1,
+            
+        // }
+        const newUser = {
+            name: currentUser.name,
+            title: 'Text',
+            dayTime: currentDate
+        }
+        setIsStata([...isStata, newUser]);
+        //setIsUser([...isUser, userCall]);//...isUser, userCall];
+        //setIsUser(newUser);
+        //console.log(isUser, "isUser data");
         toast.success(`${currentUser.name} is added to text!`);
     }
     const handleToVideo = () => {
+        // const userCall = {
+        //     "video": 1,
+            
+        // }
+        const newUser = {
+            name: currentUser.name,
+            title: 'Video',
+            dayTime: currentDate
+        }
+        setIsStata([...isStata, newUser]);
+        //const newUser = [];
+        // setIsUser([...isUser, userCall]);
+        // console.log(isUser, "isUser data");
         toast.success(`${currentUser.name} is added to video!`);
     }
+    console.log(isUser, "All details!");
     return (
         <div className='bg-[#F9F8F6]'>
+            
             <div className='py-12 md:flex mx-auto justify-center lg:w-6/9'>
                 <div className=' mx-auto w-5/6 md:w-4/12'>
                     <div className='md:w-4/5 bg-gray-50 shadow-sm text-center py-6 rounded-md'>
