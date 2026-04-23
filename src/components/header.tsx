@@ -70,7 +70,6 @@ const Header = () => {
                     >
                     
                         <ImStatsDots />
-                        <span>{isStata.length}</span>
                         Stats
                     </Link>
                 </div>
